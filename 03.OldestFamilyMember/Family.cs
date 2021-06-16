@@ -6,12 +6,12 @@ namespace DefiningClasses
 {
     public class Family
     {
-        
-        public Dictionary<string, int> FamilyMembers { get; set; }
+
+        private Dictionary<string, int> familyMembers;
 
         public Family()
         {
-
+            this.familyMembers = new Dictionary<string, int>();
         }
         public Family(string name, int age)
         {
@@ -20,7 +20,7 @@ namespace DefiningClasses
 
         public void AddMember(Person member)
         {
-            FamilyMembers.Add(member.Name, member.Age);
+            familyMembers.Add(member.Name, member.Age);
 
         }
 
@@ -28,7 +28,7 @@ namespace DefiningClasses
         {
             Person oldestMember = new Person();
 
-            foreach (var person in FamilyMembers)
+            foreach (var person in familyMembers)
             {
                 if (person.Value >= oldestMember.Age)
                 {
